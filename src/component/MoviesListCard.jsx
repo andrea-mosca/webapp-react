@@ -7,24 +7,6 @@ export default function MovieListCard() {
         <div className="col">
           <MovieCard />
         </div>
-        <div className="col">
-          <MovieCard />
-        </div>
-        <div className="col">
-          <MovieCard />
-        </div>
-        <div className="col">
-          <MovieCard />
-        </div>
-        <div className="col">
-          <MovieCard />
-        </div>
-        <div className="col">
-          <MovieCard />
-        </div>
-        <div className="col">
-          <MovieCard />
-        </div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export default function MovieCard({
   genre,
   abstract,
   release_year,
-  link,
+  id,
 }) {
   return (
     <div className="card">
@@ -20,7 +20,7 @@ export default function MovieCard({
           <li className="list-group-item">{release_year}</li>
           <li className="list-group-item">{abstract}</li>
         </ul>
-        <Link to={link} className="btn btn-primary">
+        <Link to={`:${id}`} className="btn btn-primary">
           show details
         </Link>
       </div>
