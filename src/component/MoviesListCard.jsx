@@ -12,11 +12,14 @@ export default function MovieListCard() {
   console.log(movies);
   return (
     <div className="container pt-5">
-      <div className="row row-cols-2">
+      <div className="row row-cols-3 g-3">
         {movies &&
           movies.map((movie) => (
             <div className="col" key={movie.id}>
-              <MovieCard {...movie} />
+              <MovieCard
+                {...movie}
+                image={`http://localhost:3000/movies_cover/${movie.image}`}
+              />
             </div>
           ))}
       </div>
