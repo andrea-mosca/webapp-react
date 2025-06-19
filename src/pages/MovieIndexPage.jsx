@@ -6,11 +6,17 @@ import ReviewForm from "../component/ReviewForm";
 export default function MovieIndexPage() {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState([]);
-  useEffect(() => {
+
+  const fetchMovie = () => {
     axios
       .get(`http://localhost:3000/movies/${id}`)
       .then((res) => setMovieDetails(res.data));
+  };
+
+  useEffect(() => {
+    fetchMovie();
   }, [id]);
+
   return (
     <div className="container mt-5">
       <h1>Title: {movieDetails.title}</h1>
@@ -24,7 +30,7 @@ export default function MovieIndexPage() {
           <div>Director: {movieDetails.director}</div>
           <div>Description: {movieDetails.abstract}</div>
           <div>Genre: {movieDetails.genre}</div>
-          <ReviewForm />
+          <ReviewForm movieId={id} onReviewSubmitted={fetchMovie} />
         </div>
       </div>
       <div>

@@ -1,11 +1,12 @@
 import { useState } from "react";
+import axios from "axios";
 
 const formInitialData = {
   name: "",
   vote: 1,
   text: "",
 };
-export default function ReviewForm() {
+export default function ReviewForm({ movieId, onReviewSubmitted }) {
   const [formData, setFormData] = useState(formInitialData);
 
   const handleInputChange = (e) => {
@@ -17,6 +18,12 @@ export default function ReviewForm() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    axios
+      .post(`http://localhost:3000/movies/${movieId}/reviews`, formData)
+      .then(() => {
+        setFormData(formInitialData);
+        if (onReviewSubmitted) onReviewSubmitted();
+      });
   };
 
   return (
