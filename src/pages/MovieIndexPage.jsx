@@ -11,7 +11,6 @@ export default function MovieIndexPage() {
       .get(`http://localhost:3000/movies/${id}`)
       .then((res) => setMovieDetails(res.data));
   }, [id]);
-  console.log(movieDetails.reviews);
   return (
     <div className="container mt-5">
       <h1>Title: {movieDetails.title}</h1>
