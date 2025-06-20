@@ -44,6 +44,7 @@ export default function ReviewForm({ movieId, onReviewSubmitted }) {
             className="form-control"
             id="name"
             name="name"
+            required
           />
         </div>
         <div className="mb-3">
@@ -59,6 +60,7 @@ export default function ReviewForm({ movieId, onReviewSubmitted }) {
             name="vote"
             min="1"
             max="5"
+            required
           />
         </div>
         <div className="mb-3">
@@ -71,6 +73,7 @@ export default function ReviewForm({ movieId, onReviewSubmitted }) {
             className="form-control"
             id="text"
             name="text"
+            required
           ></textarea>
         </div>
 
