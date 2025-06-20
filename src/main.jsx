@@ -6,4 +6,10 @@ import "./assets/index.css";
 
 import * as bootstrap from "bootstrap";
 import App from "./App";
-createRoot(document.getElementById("root")).render(<App />);
+import { LoaderProvider } from "./context/LoaderContext";
+
+createRoot(document.getElementById("root")).render(
+  <LoaderProvider>
+    <App />
+  </LoaderProvider>
+);

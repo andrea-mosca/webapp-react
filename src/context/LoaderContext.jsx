@@ -1,4 +1,4 @@
-import { Children, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import Loader from "../component/Loader";
 
 const LoaderContext = createContext();
@@ -8,7 +8,7 @@ function LoaderProvider({ children }) {
   const showLoader = () => setLoading(true);
   const hideLoader = () => setLoading(false);
   return (
-    <LoaderContext.Provider value={(loading, showLoader, hideLoader)}>
+    <LoaderContext.Provider value={{ loading, showLoader, hideLoader }}>
       {loading && <Loader />}
       {children}
     </LoaderContext.Provider>

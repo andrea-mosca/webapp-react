@@ -1,13 +1,17 @@
 import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useLoader } from "../context/LoaderContext";
 export default function MovieListCard() {
   const [movies, setMovies] = useState([]);
+  const { showLoader, hideLoader } = useLoader();
+
   useEffect(() => {
+    showLoader();
     axios
       .get("http://localhost:3000/movies")
-      .then((res) => setMovies(res.data.movies));
+      .then((res) => setMovies(res.data.movies))
+      .finally(() => hideLoader());
   }, []);
 
   return (
