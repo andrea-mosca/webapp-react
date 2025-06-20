@@ -27,9 +27,12 @@ export default function ReviewForm({ movieId, onReviewSubmitted }) {
   };
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 ">
       <h2>Add your review</h2>
-      <form className="text-bg-dark p-3" onSubmit={handleFormSubmit}>
+      <form
+        className="text-bg-dark p-3 border border-danger"
+        onSubmit={handleFormSubmit}
+      >
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Your name:

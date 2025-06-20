@@ -2,7 +2,10 @@ import { NavLink, Link } from "react-router";
 
 export default function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark"
+    >
       <div className="container-fluid">
         <Link to="/" className="navbar-brand" href="#">
           Home Page

@@ -10,17 +10,29 @@ export default function MovieCard({
   id,
 }) {
   return (
-    <div className="card h-100">
+    <div className="card border border-danger h-100">
       <img src={image} className="card-img-top h-100" alt={title} />
-      <div className="card-body">
+      <div className="card-body text-bg-dark">
         <h5 className="card-title">{title}</h5>
         <ul className="list-group list-group-flush">
-          <li className="list-group-item">{director}</li>
-          <li className="list-group-item">{genre}</li>
-          <li className="list-group-item">{release_year}</li>
-          <li className="list-group-item">{abstract}</li>
+          <li className="list-group-item text-bg-dark">
+            <strong>Director: </strong>
+            {director}
+          </li>
+          <li className="list-group-item text-bg-dark">
+            <strong>Genre: </strong>
+            {genre}
+          </li>
+          <li className="list-group-item text-bg-dark">
+            <strong>Release year: </strong>
+            {release_year}
+          </li>
+          <li className="list-group-item text-bg-dark">
+            <strong>Description: </strong>
+            {abstract}
+          </li>
         </ul>
-        <Link to={`/movie/${id}`} className="btn btn-primary">
+        <Link to={`/movie/${id}`} className="btn btn-danger">
           show details
         </Link>
       </div>

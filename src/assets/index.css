@@ -1,5 +1,6 @@
+
 body{
-    background-color: lightgray;
+    background: linear-gradient(to right, #eed28c, #de5c5c);
     
 }
 .img-details-page{
@@ -8,14 +9,14 @@ body{
 }
 .loader-container{
     position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .spinner-border{
     width: 100px;
