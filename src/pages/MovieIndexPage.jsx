@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import ReviewForm from "../component/ReviewForm";
 import { useLoader } from "../context/LoaderContext";
+import ReviewsList from "../component/ReviewsList";
 
 export default function MovieIndexPage() {
   const { id } = useParams();
@@ -50,26 +51,7 @@ export default function MovieIndexPage() {
           <ReviewForm movieId={id} onReviewSubmitted={fetchMovie} />
         </div>
       </div>
-
-      <div>
-        <h3 className="mt-5">Reviews:</h3>
-        {movieDetails.reviews &&
-          movieDetails.reviews.map((review) => (
-            <div key={review.id}>
-              <ul className="list-group mb-5 border border-danger">
-                <li className="list-group-item text-bg-dark border border-danger">
-                  <strong>Utent name:</strong> {review.reviewed_name}
-                </li>
-                <li className="list-group-item text-bg-dark border border-danger">
-                  <strong>Comment:</strong> "{review.review_text}"
-                </li>
-                <li className="list-group-item text-bg-dark border border-danger">
-                  <strong>Review vote:</strong> {review.review_vote}
-                </li>
-              </ul>
-            </div>
-          ))}
-      </div>
+      <ReviewsList reviews={movieDetails.reviews} />
     </div>
   );
 }
