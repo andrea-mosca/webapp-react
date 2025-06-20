@@ -6,5 +6,4 @@ import "./assets/index.css";
 
 import * as bootstrap from "bootstrap";
 import App from "./App";
-
 createRoot(document.getElementById("root")).render(<App />);
